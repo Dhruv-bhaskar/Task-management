@@ -1,0 +1,28 @@
+const express = require('express')
+const cors = require('cors')
+const mongoose = require('mongoose')
+const env = require('dotenv')
+const cookieparser = require('cookie-parser')
+
+env.config()
+const app = express()
+
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true
+}))
+
+app.use(cookieparser())
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+
+mongoose.connect(process.env.MONGO_URL).then(()=>{
+   console.log('connected to db');
+}).catch(err => console.log(err));
+
+
+
+app.listen(5000, ()=>{
+    console.log('App running at 5000');
+    
+})
