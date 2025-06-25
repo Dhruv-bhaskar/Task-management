@@ -3,6 +3,7 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const env = require('dotenv')
 const cookieparser = require('cookie-parser')
+const userRouter = require('./Routes/userRoutes')
 
 env.config()
 const app = express()
@@ -16,11 +17,15 @@ app.use(cookieparser())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
+app.use('/user', userRouter)
+
 mongoose.connect(process.env.MONGO_URL).then(()=>{
    console.log('connected to db');
 }).catch(err => console.log(err));
 
-
+app.get('/', (req,res)=>{
+    res.send('APP IS RUNNING...')
+})
 
 app.listen(5000, ()=>{
     console.log('App running at 5000');
