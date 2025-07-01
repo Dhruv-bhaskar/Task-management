@@ -35,7 +35,7 @@ router.post('/create', authMiddleware, async (req,res)=>{
 
 router.get('/', authMiddleware, async (req,res)=>{
     try{
-        const allTask = await Task.find({createdBy: req.user,id})
+        const allTask = await Task.find({createdBy: req.user.id})
         res.json(allTask)
     }
     catch(err){

@@ -1,9 +1,10 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 const Home = () => {
   return (
-    <div className='bg-gray-300 min-h-screen'>
-      HOME PAGE
+    <div className='min-h-screen flex flex-col items-center'>
+      <Navbar/>
     </div>
   )
 }
