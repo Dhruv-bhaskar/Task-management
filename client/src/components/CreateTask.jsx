@@ -36,7 +36,7 @@ const CreateTask = () => {
   };
 
   return (
-    <div className="flex flex-col gap-3 items-center min-h-screen dark:bg-black/85">
+    <div className="flex flex-col gap-3 items-center min-h-screen dark:bg-stone-900 transition-colors duration-300">
       <Lognavbar/>
       <p className="text-2xl mb-4 font-extrabold dark:text-white">
         Create Your Task

@@ -64,7 +64,7 @@ const Register = () => {
           required
         />
         </div>
-        <button type="submit" className="rounded-lg w-full py-1.5 bg-blue-600 text-white hover:bg-blue-500">
+        <button type="submit" className="rounded-lg w-full py-1.5 bg-blue-600 text-white hover:bg-blue-500 transition-colors">
           Sign Up
         </button>
         <p className='dark:text-white'>Already have account?{" "}<a href="/login" className="text-blue-800 dark:text-blue-400">Sign In</a></p>

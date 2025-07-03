@@ -43,7 +43,7 @@ const EditTask = () => {
   };
 
   return (
-    <div className="flex flex-col gap-3 items-center min-h-screen dark:bg-black/85">
+    <div className="flex flex-col gap-3 items-center min-h-screen dark:bg-stone-900 transition-colors duration-300">
       <Lognavbar/>
       <p className="text-2xl mb-4 font-extrabold dark:text-white">
         Update Your Task
@@ -68,7 +68,7 @@ const EditTask = () => {
             name="dueDate"
             value={data.dueDate?.split("T")[0]}
             onChange={handleChange}
-            className="border-1 border-gray-500 rounded-md p-1 px-2 dark:border-white/65"
+            className="border-1 border-gray-500 rounded-md p-1 px-2 dark:border-white/65 dark:bg-gray-500"
           />
         </div>
         <textarea
@@ -87,9 +87,9 @@ const EditTask = () => {
             onChange={handleChange}
             className="border-1 border-gray-500 rounded-md p-1 px-2 dark:border-white/65"
           >
-            <option value="pending">Pending</option>
-            <option value="in-progress">In- progress</option>
-            <option value="completed">Completed</option>
+            <option value="pending" className="dark:bg-gray-400 dark:text-white">Pending</option>
+            <option value="in-progress" className="dark:bg-gray-400 dark:text-white">In- progress</option>
+            <option value="completed" className="dark:bg-gray-400 dark:text-white">Completed</option>
           </select>
         </div>
         <button

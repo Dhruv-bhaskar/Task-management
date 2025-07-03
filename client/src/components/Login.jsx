@@ -19,7 +19,7 @@ const Login = () => {
         const res = await axios.post(`${import.meta.env.VITE_API_URL}/user/login`, data, {withCredentials: true})
         console.log(res);
         alert('user logged in')
-        navigate('/')
+        navigate('/alltask')
        }
        catch(err){
         if(err.response?.status == 400){
@@ -60,10 +60,10 @@ const Login = () => {
           required
         />
         </div>
-        <button type="submit" className="rounded-lg w-full py-1.5 bg-blue-600 text-white hover:bg-blue-500">
+        <button type="submit" className="rounded-lg w-full py-1.5 bg-blue-600 text-white hover:bg-blue-500 transition-colors">
           Sign In
         </button>
-        <p className='dark:text-white'>Already have account?{" "}<a href="/register" className="text-blue-800 dark:text-blue-400">Sign Up</a></p>
+        <p className='dark:text-white'>Don't have account?{" "}<a href="/register" className="text-blue-800 dark:text-blue-400">Sign Up</a></p>
       </form>
     </div>
   )
