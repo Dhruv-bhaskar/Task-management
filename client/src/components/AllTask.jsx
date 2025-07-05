@@ -11,9 +11,10 @@ const AllTask = () => {
   const [filterStatus, setFilterStatus] = useState("");
   const [sortBy, setSortBy] = useState("");
   const [dropDown, setDropdown] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchPost = async () => {
+    setIsLoading(true)
     try {
       const res = await axios.get(`${import.meta.env.VITE_API_URL}/task`, {
         params: {
