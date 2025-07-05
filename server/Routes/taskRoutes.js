@@ -7,9 +7,6 @@ router.post("/create", authMiddleware, async (req, res) => {
   const { title, content, dueDate, Status } = req.body;
 
   try {
-    if (err.code === 11000) {
-      return res.status(400).json({ message: "Task title already exists" });
-    }
     const userId = req.user.id;
 
     const newTask = await Task.create({
@@ -23,6 +20,9 @@ router.post("/create", authMiddleware, async (req, res) => {
     res.status(201).json(newTask);
   } catch (err) {
     console.error("newTask error:", err);
+    if (err.code === 11000) {
+      return res.status(400).json({ message: "Task title already exists" });
+    }
     res.status(500).json({
       message: "Task creation failed",
     });
