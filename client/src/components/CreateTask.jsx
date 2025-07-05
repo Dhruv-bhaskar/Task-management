@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Lognavbar from "./Lognavbar";
+import {toast} from 'react-toastify'
 
 const CreateTask = () => {
   const [data, setData] = useState({
@@ -27,11 +28,15 @@ const CreateTask = () => {
         data,
         { withCredentials: true }
       );
-      alert("Task created");
+      toast.success('Task created')
       navigate("/alltask");
     } catch (err) {
-      alert("Task creation failed");
+      if(err.response?.status == 400){
+        alert(err.response.data.message)
+      }else{
+        alert("Task creation failed");
       console.log(err);
+      }
     }
   };
 
@@ -52,6 +57,7 @@ const CreateTask = () => {
           placeholder="task name"
           name="title"
           onChange={handleChange}
+          required
         />
         <div className="flex justify-start items-center w-full pl-2 gap-2">
           <span>Select date:</span>
@@ -60,6 +66,7 @@ const CreateTask = () => {
             name="dueDate"
             onChange={handleChange}
             className="border-1 border-gray-500 rounded-md p-1 px-2 dark:border-white/65"
+            required
           />
         </div>
         <textarea
@@ -68,6 +75,7 @@ const CreateTask = () => {
           placeholder="description"
           onChange={handleChange}
           rows={30}
+          required
         ></textarea>
         <div className="flex justify-start items-center w-full pl-2 gap-2">
           <span>Status:</span>
@@ -75,10 +83,11 @@ const CreateTask = () => {
             name="Status"
             onChange={handleChange}
             className="border-1 border-gray-500 rounded-md p-1 px-2 dark:border-white/65"
+            required
           >
-            <option value="pending">Pending</option>
-            <option value="in-progress">In- progress</option>
-            <option value="completed">Completed</option>
+            <option value="pending" className="dark:bg-gray-400 dark:text-white">Pending</option>
+            <option value="in-progress" className="dark:bg-gray-400 dark:text-white">In- progress</option>
+            <option value="completed" className="dark:bg-gray-400 dark:text-white">Completed</option>
           </select>
         </div>
         <button

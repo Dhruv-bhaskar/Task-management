@@ -8,6 +8,8 @@ import EditTask from './components/EditTask'
 import ViewTask from './components/ViewTask'
 import Navbar from './components/Navbar'
 import Loggedout from './components/Loggedout'
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from 'react-toastify';
 
 
 const router = createBrowserRouter([
@@ -56,6 +58,7 @@ function App() {
   return (
     <div>
       <RouterProvider router={router}/>
+      <ToastContainer position="top-right" autoClose={1500} />
     </div>
   )
 }

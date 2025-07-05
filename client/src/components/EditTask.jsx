@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Lognavbar from "./Lognavbar";
+import {toast} from 'react-toastify'
 
 const EditTask = () => {
   const [data, setData] = useState({
@@ -11,6 +12,7 @@ const EditTask = () => {
     dueDate: "",
     Status: "pending",
   });
+  const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -20,7 +22,8 @@ const EditTask = () => {
         withCredentials: true,
       })
       .then((res) => setData(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(()=> setIsLoading(false))
   }, [id]);
 
   const handleChange = (e) => {
@@ -34,13 +37,27 @@ const EditTask = () => {
       await axios.put(`${import.meta.env.VITE_API_URL}/task/${id}`, data, {
         withCredentials: true,
       });
-      alert("task Updated");
+      toast.success("task Updated");
       navigate("/alltask");
     } catch (err) {
       alert("error in updating");
       console.log(err);
     }
   };
+
+  if (isLoading)
+    return (
+      <div className="flex flex-col gap-2 w-full h-screen justify-center items-center dark:bg-zinc-900">
+        <img
+          src="/taskify.png"
+          alt="logo"
+          className="h-24 rounded-full animate-spin duration-75"
+        />
+        <p className="text-2xl text-gray-600 text-center dark:text-white">
+          Please wait...
+        </p>
+      </div>
+    );
 
   return (
     <div className="flex flex-col gap-3 items-center min-h-screen dark:bg-stone-900 transition-colors duration-300">
