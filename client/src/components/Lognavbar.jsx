@@ -11,7 +11,7 @@ const Lognavbar = () => {
 
   return (
     <nav className="flex justify-between items-center w-screen h-[5.1rem] rounded-md px-4 bg-black/5 mb-10 dark:bg-gray-400/70 box-border transition-colors duration-300">
-      <Link to={"/loggedin"}>
+      <Link to={"/alltask"}>
         <img
           src="/taskify.png"
           alt="logo"

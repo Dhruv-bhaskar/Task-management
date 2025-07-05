@@ -26,7 +26,7 @@ const ViewTask = () => {
       await axios.delete(`${import.meta.env.VITE_API_URL}/task/${id}`, {
         withCredentials: true,
       });
-      toast.error("task deleted");
+      toast.warn("task deleted");
       navigate("/alltask");
     } catch (err) {
       console.log(err);

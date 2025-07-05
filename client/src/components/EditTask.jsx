@@ -37,7 +37,7 @@ const EditTask = () => {
       await axios.put(`${import.meta.env.VITE_API_URL}/task/${id}`, data, {
         withCredentials: true,
       });
-      toast.success("task Updated");
+      toast.info("task Updated");
       navigate("/alltask");
     } catch (err) {
       alert("error in updating");

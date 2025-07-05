@@ -43,7 +43,7 @@ const AllTask = () => {
       await axios.delete(`${import.meta.env.VITE_API_URL}/task/${id}`, {
         withCredentials: true,
       });
-      toast.error('Task deleted')
+      toast.warn("Task deleted");
       fetchPost();
     } catch (err) {
       console.log(err);
@@ -72,13 +72,11 @@ const AllTask = () => {
   return (
     <div className="flex flex-col items-center w-screen min-h-screen px-4 box-border dark:bg-stone-900 transition-colors duration-300">
       <nav className="flex justify-between items-center w-screen h-[5.1rem] rounded-md px-4 bg-black/5 mb-10 dark:bg-gray-400/70 box-border transition-colors duration-300">
-        <Link to={"/loggedin"}>
-          <img
-            src="/taskify.png"
-            alt="logo"
-            className="h-[4.5rem] w-[5rem] flex justify-center"
-          />
-        </Link>
+        <img
+          src="/taskify.png"
+          alt="logo"
+          className="h-[4.5rem] w-[5rem] flex justify-center"
+        />
 
         <div className="relative">
           <div className="flex items-center gap-4">
@@ -96,7 +94,7 @@ const AllTask = () => {
             />
           </div>
           {dropDown && (
-            <div className="text-center border p-3 flex flex-col justify-center items-center gap-4 absolute right-0 top-full mt-2 w-[10rem] bg-white/88 rounded-2xl shadow-md z-50">
+            <div className="text-center border p-3 flex flex-col justify-center items-center gap-4 absolute right-0 top-full mt-2 w-[10rem] bg-white/88 rounded-2xl shadow-md z-50 dark:bg-black/60 dark:shadow-white">
               <Loggedout />
             </div>
           )}
@@ -155,7 +153,7 @@ const AllTask = () => {
                     <button
                       onClick={() => {
                         navigator.clipboard.writeText(data.content);
-                        toast.success('copied to clipboard')
+                        toast.success("copied to clipboard");
                       }}
                       className="border-gray-500 border-2 rounded-3xl px-4 py-1.5 text-gray-600 hover:bg-gray-400 hover:text-white transition-colors dark:border-gray-500 dark:text-gray-400 dark:hover:bg-gray-600"
                     >

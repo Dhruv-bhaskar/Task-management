@@ -4,27 +4,27 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="min-h-screen w-screen flex flex-col items-center">
-      <div className="sticky top-0 z-50">
+    <div className="min-h-screen w-screen flex flex-col items-center dark:bg-stone-900 transition-colors duration-300">
+      <div className="sticky top-0 z-50 w-[99%]">
         <Navbar />
       </div>
       <div className="w-full flex flex-col items-center mt-[-1.3rem] bg-black/5">
-        <div className="flex flex-col gap-4 items-center mt-[5rem] py-2">
-          <p className="text-6xl lg:text-8xl md:text-7xl text-stone-700 font-serif font-bold">
+        <div className="flex flex-col gap-5 items-center mt-[10rem] py-2">
+          <p className="text-6xl lg:text-8xl md:text-7xl text-stone-700 font-serif font-bold dark:text-stone-200">
             Taskify
           </p>
-          <p className="text-2xl lg:text-4xl md:text-3xl text-stone-600 font-semibold">
+          <p className="text-2xl lg:text-4xl md:text-3xl text-stone-600 font-semibold dark:text-stone-200">
             Your task management buddy
           </p>
           <Link
             to={"/register"}
-            className="lg:text-xl text-stone-700 border-3 border-stone-500 rounded-3xl mt-5 p-2 hover:bg-stone-600 hover:text-white hover:border-black transition-colors duration-200"
+            className="lg:text-xl text-stone-700 dark:text-stone-200 dark:hover:border-white border-3 border-stone-500 rounded-3xl mt-7 p-2 hover:bg-stone-600 hover:text-white hover:border-black transition-colors duration-200"
           >
             Get Started
           </Link>
         </div>
-        <div className="border-4 border-stone-400 bg-white/20 shadow-lg shadow-black/50 rounded-3xl flex flex-col gap-5 items-center py-6 mt-[5rem] w-[75%]">
-          <p className="md:text-[1.7rem] ml-6 text-stone-700 font-semibold">
+        <div className="border-4 border-stone-400 bg-white/20 shadow-lg shadow-black/50 rounded-3xl flex flex-col gap-5 items-center py-6 mt-[10rem] w-[75%] dark:shadow-white/65">
+          <p className="md:text-[1.7rem] text-stone-700 font-semibold dark:text-stone-200">
             Make your life easy with these features
           </p>
           <ul className="lg:text-xl flex flex-col items-center gap-5 mt-1">
@@ -42,9 +42,9 @@ const Home = () => {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col items-center justify-center gap-6 border-4 border-stone-400 rounded-3xl w-[75%] bg-white/20 shadow-lg shadow-black/50  py-6 mt-[5rem]">
-          <p className="text-xl sm:text-3xl lg:text-4xl text-stone-700 font-semibold">Manage your tasks with ease</p>
-          <p className="text-lg sm:text-xl lg:text-2xl text-stone-700 font-semibold">Stay Organized & Boost Productivity</p>
+        <div className="flex flex-col items-center justify-center gap-6 border-4 border-stone-400 rounded-3xl w-[75%] bg-white/20 shadow-lg shadow-black/50 py-6 mt-[5rem] dark:shadow-white/65">
+          <p className="text-xl sm:text-3xl lg:text-4xl text-stone-700 font-semibold dark:text-stone-200">Manage your tasks with ease</p>
+          <p className="text-lg sm:text-xl lg:text-2xl text-stone-700 font-semibold dark:text-stone-200">Stay Organized & Boost Productivity</p>
           <p className="text-5xl sm:text-6xl lg:text-7xl text-shadow-lg text-shadow-black/80">💡</p>
         </div>
 
