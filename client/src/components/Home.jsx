@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+
   return (
     <div className="min-h-screen w-screen flex flex-col items-center dark:bg-stone-900 transition-colors duration-300">
       <div className="sticky top-0 z-50 w-[99%]">
@@ -35,7 +36,7 @@ const Home = () => {
               🔍 Filter & Sort by Status/Title/Date
             </li>
             <li className="border-2 border-stone-500 rounded-2xl text-[1.2rem] p-1 text-stone-900 bg-stone-200 font-semibold w-[15rem] sm:w-[22rem] md:w-[28rem] shadow-black shadow-sm">
-              🌙 Light and Dark Mode
+              🌙 Light and Dark Mode (Device Theme)
             </li>
             <li className="border-2 border-stone-500 rounded-2xl text-[1.2rem] p-1 text-stone-900 bg-stone-200 font-semibold w-[15rem] sm:w-[22rem] md:w-[28rem] shadow-black shadow-sm">
               🖥️ Works on all devices
@@ -67,7 +68,7 @@ const Home = () => {
                   src="/linkedin.svg"
                   alt="LinkedIn"
                 />
-                <a target="blank" href="https://www.linkedin.com/in/dhruv-kumar-4206b0274/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BhftkjJ3AQZmzZlWtuhyXdQ%3D%3D"><p>Dhruv Kumar</p></a>
+                <a target="blank" href="https://www.linkedin.com/in/dhruv-kumar-4206b0274/"><p>Dhruv Kumar</p></a>
               </div>
               <div className="flex gap-3 items-center">
                 <img
