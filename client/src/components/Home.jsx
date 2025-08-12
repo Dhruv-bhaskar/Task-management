@@ -80,7 +80,7 @@ const Home = () => {
               </div>
             </div>
             <p className="mt-5 text-sm">
-              © {new Date().getFullYear()} - Present Bloggish. All rights
+              © {new Date().getFullYear()} - Present Taskify. All rights
               reserved.
             </p>
           </div>
