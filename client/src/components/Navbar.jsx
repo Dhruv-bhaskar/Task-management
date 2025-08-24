@@ -9,7 +9,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center w-full h-[5.1rem] rounded-md px-4 bg-black/5 mb-10 dark:bg-gray-400/70 transition-colors duration-300">
+    <nav className="flex justify-between items-center w-full h-[5.1rem] rounded-md px-4 bg-black/5 mb-10 dark:bg-black/45 transition-colors duration-300">
       <img
         src="/taskify.png"
         alt="logo"
