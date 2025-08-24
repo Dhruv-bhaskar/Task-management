@@ -1,101 +1,118 @@
-import React, {useEffect} from "react";
-import Navbar from "./Navbar";
+import React from "react";
 import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 
-const Home = () => {
-
+const Landing = () => {
   return (
-    <div className="min-h-screen w-screen flex flex-col items-center dark:bg-stone-900 transition-colors duration-300">
-      <div className="sticky top-0 z-50 w-[99%]">
+    <div className="min-h-screen flex flex-col items-center justify-between dark:bg-stone-900 bg-stone-50 transition-colors duration-300">
+      {/* Navbar */}
+      <div className="sticky top-0 z-50 w-full">
         <Navbar />
       </div>
-      <div className="w-full flex flex-col items-center mt-[-1.3rem] bg-black/5">
-        <div className="flex flex-col gap-5 items-center mt-[10rem] py-2">
-          <p className="text-6xl lg:text-8xl md:text-7xl text-stone-700 font-serif font-bold dark:text-stone-200">
-            Taskify
-          </p>
-          <p className="text-2xl lg:text-4xl md:text-3xl text-stone-600 font-semibold dark:text-stone-200">
-            Your task management buddy
-          </p>
-          <Link
-            to={"/register"}
-            className="lg:text-xl text-stone-700 dark:text-stone-200 dark:hover:border-white border-3 border-stone-500 rounded-3xl mt-7 p-2 hover:bg-stone-600 hover:text-white hover:border-black transition-colors duration-200"
-          >
-            Get Started
-          </Link>
-        </div>
-        <div className="border-4 border-stone-400 bg-white/20 shadow-lg shadow-black/50 rounded-3xl flex flex-col gap-5 items-center py-6 mt-[10rem] w-[75%] dark:shadow-white/65">
-          <p className="md:text-[1.7rem] text-stone-700 font-semibold dark:text-stone-200">
-            Make your life easy with these features
-          </p>
-          <ul className="lg:text-xl flex flex-col items-center gap-5 mt-1">
-            <li className="border-2 border-stone-500 rounded-2xl text-[1.2rem] p-1 text-stone-900 bg-stone-200 font-semibold w-[15rem] sm:w-[22rem] md:w-[28rem] shadow-black shadow-sm">
-              ✅ Add, Edit, Delete tasks
-            </li>
-            <li className="border-2 border-stone-500 rounded-2xl text-[1.2rem] p-1 text-stone-900 bg-stone-200 font-semibold w-[15rem] sm:w-[22rem] md:w-[28rem] shadow-black shadow-sm">
-              🔍 Filter & Sort by Status/Title/Date
-            </li>
-            <li className="border-2 border-stone-500 rounded-2xl text-[1.2rem] p-1 text-stone-900 bg-stone-200 font-semibold w-[15rem] sm:w-[22rem] md:w-[28rem] shadow-black shadow-sm">
-              🌙 Light and Dark Mode (Device Theme)
-            </li>
-            <li className="border-2 border-stone-500 rounded-2xl text-[1.2rem] p-1 text-stone-900 bg-stone-200 font-semibold w-[15rem] sm:w-[22rem] md:w-[28rem] shadow-black shadow-sm">
-              🖥️ Works on all devices
-            </li>
-          </ul>
-        </div>
-        <div className="flex flex-col items-center justify-center gap-6 border-4 border-stone-400 rounded-3xl w-[75%] bg-white/20 shadow-lg shadow-black/50 py-6 mt-[5rem] dark:shadow-white/65">
-          <p className="text-xl sm:text-3xl lg:text-4xl text-stone-700 font-semibold dark:text-stone-200">Manage your tasks with ease</p>
-          <p className="text-lg sm:text-xl lg:text-2xl text-stone-700 font-semibold dark:text-stone-200">Stay Organized & Boost Productivity</p>
-          <p className="text-5xl sm:text-6xl lg:text-7xl text-shadow-lg text-shadow-black/80">💡</p>
-        </div>
 
-        <footer className="text-gray-200 bg-black/80 w-full flex flex-col md:flex-row justify-around items-center py-6 mt-[5rem]">
-          <div className="flex flex-col gap-5 mb-8 md:mb-0 md:w-1/3 text-center md:text-left">
-            <div className="flex gap-3 items-center justify-center md:justify-start">
-              <img
-                className="h-7 w-7 rounded-full"
-                src="/phone.webp"
-                alt="contact"
-              />
-              <p className="text-white border-b-2 border-b-white pb-1">
-                Contact Us
-              </p>
-            </div>
-            <div className="flex flex-col gap-3 mt-5 pl-0 items-center md:items-start">
-              <div className="flex gap-3 items-center">
-                <img
-                  className="h-7 w-7 rounded-full"
-                  src="/linkedin.svg"
-                  alt="LinkedIn"
-                />
-                <a target="blank" href="https://www.linkedin.com/in/dhruv-kumar-4206b0274/"><p>Dhruv Kumar</p></a>
-              </div>
-              <div className="flex gap-3 items-center">
-                <img
-                  className="h-7 w-7 rounded-full"
-                  src="/github.svg"
-                  alt="GitHub"
-                />
-                <a target="blank" href="https://github.com/Dhruv-bhaskar"><p>Dhruv-bhaskar</p></a>
-              </div>
-            </div>
-            <p className="mt-5 text-sm">
-              © {new Date().getFullYear()} - Present Taskify. All rights
-              reserved.
-            </p>
-          </div>
+      {/* Hero Section */}
+      <section className="flex flex-col items-center text-center mt-37 px-6">
+        <h1 className="text-5xl md:text-7xl font-extrabold text-stone-800 dark:text-stone-200">
+          Welcome to <span className="text-blue-600">Taskify</span>
+        </h1>
+        <p className="mt-6 text-lg md:text-2xl text-stone-600 dark:text-stone-300 max-w-2xl">
+          Simplify your life, stay productive, and manage all your tasks in one
+          place. Taskify is your smart companion for staying organized.
+        </p>
+        <Link
+          to={"/register"}
+          className="mt-8 px-6 py-3 rounded-full bg-blue-600 text-white font-semibold text-lg hover:bg-blue-700 transition-all duration-300 shadow-lg"
+        >
+          Get Started 🚀
+        </Link>
+      </section>
 
-          <div className="flex-shrink-0">
-            <img
-              className="h-40 w-40 rounded-full object-cover"
-              src="/taskify.png"
-              alt="footer-logo"
-            />
+      {/* Features Section */}
+      <section className="mt-42 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6 max-w-6xl">
+        <div className="bg-white dark:bg-stone-800 rounded-2xl shadow-md p-6 flex flex-col items-center text-center">
+          <p className="text-4xl">✅</p>
+          <h3 className="mt-3 font-bold text-xl text-stone-700 dark:text-stone-200">Task Control</h3>
+          <p className="text-stone-500 dark:text-stone-300 mt-2">
+            Add, edit, and delete tasks effortlessly.
+          </p>
+        </div>
+        <div className="bg-white dark:bg-stone-800 rounded-2xl shadow-md p-6 flex flex-col items-center text-center">
+          <p className="text-4xl">🔍</p>
+          <h3 className="mt-3 font-bold text-xl text-stone-700 dark:text-stone-200">Smart Sorting</h3>
+          <p className="text-stone-500 dark:text-stone-300 mt-2">
+            Filter & sort tasks by status, title, or due date.
+          </p>
+        </div>
+        <div className="bg-white dark:bg-stone-800 rounded-2xl shadow-md p-6 flex flex-col items-center text-center">
+          <p className="text-4xl">🌙</p>
+          <h3 className="mt-3 font-bold text-xl text-stone-700 dark:text-stone-200">Dark Mode</h3>
+          <p className="text-stone-500 dark:text-stone-300 mt-2">
+            Enjoy light & dark themes synced with your device.
+          </p>
+        </div>
+        <div className="bg-white dark:bg-stone-800 rounded-2xl shadow-md p-6 flex flex-col items-center text-center">
+          <p className="text-4xl">💻</p>
+          <h3 className="mt-3 font-bold text-xl text-stone-700 dark:text-stone-200">Cross Platform</h3>
+          <p className="text-stone-500 dark:text-stone-300 mt-2">
+            Works seamlessly on desktop, tablet, and mobile.
+          </p>
+        </div>
+      </section>
+
+      {/* Motivation Section */}
+      <section className="mt-35 px-6 text-center max-w-3xl">
+        <h2 className="text-3xl md:text-4xl font-bold text-stone-800 dark:text-stone-200">
+          Stay Organized & Boost Productivity
+        </h2>
+        <p className="mt-4 text-lg text-stone-600 dark:text-stone-300">
+          Taskify helps you focus on what matters most. Stop juggling sticky
+          notes and scattered reminders — get everything in one place.
+        </p>
+        <div className="text-6xl mt-6">💡</div>
+      </section>
+
+      {/* Footer */}
+      <footer className="mt-24 bg-black/90 w-full text-gray-200 py-10 px-6 flex flex-col md:flex-row items-center justify-between">
+        <div className="flex flex-col gap-4 text-center md:text-left">
+          <h3 className="font-semibold text-lg border-b border-gray-400 pb-1">
+            Contact Us
+          </h3>
+          <div className="flex gap-3 items-center justify-center md:justify-start">
+            <img src="/linkedin.svg" alt="LinkedIn" className="h-6 w-6" />
+            <a
+              href="https://www.linkedin.com/in/dhruv-kumar-4206b0274/"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:underline"
+            >
+              Dhruv Kumar
+            </a>
           </div>
-        </footer>
-      </div>
+          <div className="flex gap-3 items-center justify-center md:justify-start">
+            <img src="/github.svg" alt="GitHub" className="h-6 w-6" />
+            <a
+              href="https://github.com/Dhruv-bhaskar"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:underline"
+            >
+              Dhruv-bhaskar
+            </a>
+          </div>
+          <p className="text-sm mt-3">
+            © {new Date().getFullYear()} Taskify. All rights reserved.
+          </p>
+        </div>
+        <div className="mt-6 md:mt-0">
+          <img
+            src="/taskify.png"
+            alt="Taskify Logo"
+            className="h-28 w-28 rounded-full object-cover"
+          />
+        </div>
+      </footer>
     </div>
   );
 };
 
-export default Home;
+export default Landing;
